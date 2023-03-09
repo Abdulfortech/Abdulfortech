@@ -1,0 +1,47 @@
+/*****************
+    PROJECT
+*****************/
+.project{
+    border-radius: 10px;
+}
+
+.project img{
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    height: 220px;
+
+}
+
+.project .card-body{
+    height: 150px;
+}
+
+.project-page{
+    border-radius: 5px;
+}
+.project-page .card-body img{
+    width: 100%;
+    height: 430px;
+    border-radius: 10px 10px;
+}
+
+@media only screen and (max-width: 767px) {
+    .project-page .card-body h1{
+        font-size: 26px;
+    }
+
+    .project-page .card-body h6{
+        font-size: 15px;
+    }
+
+    .project img{
+        height: 200px;
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+    }
+    .project-page .card-body img{
+        width: 100%;
+        height: 210px;
+        border-radius: 10px 10px;
+    }    
+}
