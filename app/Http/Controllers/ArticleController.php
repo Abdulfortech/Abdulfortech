@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
@@ -13,7 +14,7 @@ class ArticleController extends Controller
         $activeArticles = Article::where('status', 'Active')->count();
         $englishArticles = Article::where('locale', 'English')->whereNotNull('status')->count();
         $hausaArticles = Article::where('locale', 'Hausa')->whereNotNull('status')->count();
-        return view('articles', [
+        return view('admin.articles', [
             'title' => 'All Articles',
             'allArticles' => $allArticles,
             'activeArticles' => $activeArticles,
@@ -27,20 +28,21 @@ class ArticleController extends Controller
 
     public function show(Article $article)
     {
-        return view('articleShow', [
+        return view('admin.articleShow', [
             'article' => $article
         ]);
     }
 
     public function newArticle()
     {
-        return view('articleNew');
+        return view('admin.articleNew');
     }
 
     public function addArticle(Request $request)
     {
         $data = $request->validate([
             'user_id' => ['required'],
+            'slug' => 'unique:articles',
             'title' => ['required', 'min:3'],
             'category' => ['required', 'min:4'],
             'locale' => ['required'],
@@ -48,18 +50,18 @@ class ArticleController extends Controller
             'status' => ['required'],
             'body' => ['required'],
         ]);
-        
+        $slug = Str::slug($data['title'], '-');
+        $data['slug'] = $slug;
         if($request->hasFile('thumbnail')){
             $data['thumbnail'] = $request->file('thumbnail')->store('articles', 'public');
         }
-        
         Article::create($data);
         return redirect('/admin/articles')->with('message','Article has been published');
     } 
 
     public function edit(Article $article)
     {
-        return view('articleEdit', [
+        return view('admin.articleEdit', [
             'article' => $article
         ]);
     }

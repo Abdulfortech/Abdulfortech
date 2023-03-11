@@ -25,7 +25,7 @@
                         <i class="fas fa-dot-circle text-primary fa-sm"></i>
                         {{$project->created_at}} 
                     </h6>
-                    <!-- <img src="{{ asset('storage/'.$project->thumbnail) }}" class="my-4"> -->
+                    <img src="{{ asset('storage/'.$project->thumbnail) }}" class="my-4">
                     <div class="text-justify my-3">
                         {!! $project->description !!} 
                     </div>

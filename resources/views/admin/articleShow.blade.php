@@ -27,7 +27,9 @@
                         <i class="fas fa-dot-circle text-primary fa-sm"></i>
                         {{$article->created_at}} 
                     </h6>
-                    <!-- <img src="{{ asset('storage/'.$article->thumbnail) }}" class="my-4"> -->
+                    @if($article['thumbnail'] !== null)
+                    <img src="{{ asset('storage/'.$article->thumbnail) }}" class="my-3">
+                    @endif
                     <div class="text-justify my-3">
                         {!! $article->body !!} 
                     </div>

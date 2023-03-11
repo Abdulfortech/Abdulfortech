@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -13,7 +14,7 @@ class ProjectController extends Controller
         $activeProjects = Project::where('status', 'Active')->count();
         $inactiveProjects = Project::where('status', 'Inactive')->count();
         $completeProjects = Project::whereNotNull('status')->where('progress', 'Completed')->count();
-        return view('projects', [
+        return view('admin.projects', [
             'title' => 'All Projects',
             'allProjects' => $allProjects,
             'activeProjects' => $activeProjects,
@@ -27,20 +28,21 @@ class ProjectController extends Controller
 
     public function show(Project $project)
     {
-        return view('projectShow', [
+        return view('admin.projectShow', [
             'project' => $project
         ]);
     }
 
     public function newProject()
     {
-        return view('projectNew');
+        return view('admin.projectNew');
     } 
 
     public function create(Request $request)
     {
         $data = $request->validate([
             'user_id' => ['required'],
+            'slug' => 'unique:projects',
             'pname' => ['required', 'min:3'],
             'category' => ['required', 'min:3'],
             'link' => ['required', 'min:4'],
@@ -49,17 +51,18 @@ class ProjectController extends Controller
             'thumbnail' => ['required'],
             'description' => ['required', 'min:250'],
         ]);
-        
+        $slug = Str::slug($data['pname'], '-');
+        $data['slug'] = $slug;
         $data['thumbnail'] = $request->file('thumbnail')->store('thumbnails', 'public');
         // dd($data);
 
         Project::create($data);
         return redirect('/admin/projects')->with('message','Project has been added');
     } 
-
+    
     public function editProject(Project $project)
     {
-        return view('projectEdit', [
+        return view('admin.projectEdit', [
             'project' => $project
         ]);
     }

@@ -30,7 +30,7 @@
   </main>
 
 <!--Footer-->
-    @include('components.footer')
+    @include('components.footerPublic')
 <!--/.Footer-->
 
 <!-- scripts -->

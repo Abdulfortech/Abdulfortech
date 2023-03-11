@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\PublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,15 @@ use App\Http\Controllers\ArticleController;
 |
 */
 // public routes
-Route::get('/', function () {
-    return view('public.index');
-});
+Route::get('/', [PublicController::class, 'index']);
+Route::get('/hireme', [PublicController::class, 'hireMe']);
+Route::get('/hireme/request', [PublicController::class, 'requestService'])->name('requestService');
+Route::get('/about', [PublicController::class, 'about']);
+Route::get('/contact', [PublicController::class, 'contact']);
+Route::get('/blog', [PublicController::class, 'blog']);
+Route::get('/blog/{article}', [PublicController::class, 'blogView']);
+Route::get('/projects', [PublicController::class, 'projects']);
+Route::get('/projects/{project}', [PublicController::class, 'projectView']);
 
 // routes for admin
 Route::get('/admin/login', [UserController::class, 'index']);

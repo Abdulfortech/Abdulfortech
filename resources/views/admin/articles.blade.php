@@ -6,7 +6,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"><a href="/admin/articles">Articles</a></h1>
-        <a href="/admin/articles/new" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+        <a href="/admin/article/new" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-plus fa-sm text-white-50"></i> New Article</a>
     </div>
     <!-- Content Row -->

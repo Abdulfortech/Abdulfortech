@@ -72,6 +72,13 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label>Project Thumbnail</label>
+                            <input type="file" class="form-control " name="thumbnail">
+                            @if ($errors->has('thumbnail'))
+                            <span class="text-danger">{{ $errors->first('thumbnail') }}</span>
+                            @endif
+                        </div>
+                        <div class="form-group">
                             <label>Body</label>
                             <textarea class="textarea" name="body" required></textarea>
                             @if ($errors->has('body'))

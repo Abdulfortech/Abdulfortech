@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('login');
+        return view('admin.login');
     } 
 
     public function authenticate(Request $request)
@@ -39,7 +39,7 @@ class UserController extends Controller
     
     public function registerForm()
     {
-        return view('register');
+        return view('admin.register');
     } 
 
     public function register(Request $request)
@@ -58,7 +58,7 @@ class UserController extends Controller
     }
     public function dashboard(Request $request)
     {
-        return view('/adminDashboard');
+        return view('admin./adminDashboard');
     }
 
     public function logout(Request $request)

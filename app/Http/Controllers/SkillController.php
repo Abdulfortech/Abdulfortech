@@ -11,7 +11,7 @@ class SkillController extends Controller
 
     public function index()
     {
-        return view('skills', [
+        return view('admin.skills', [
             'title' => 'All Skills',
             'skills' => Skills::whereNotNull('status')
             ->orderBy('skill_id', 'asc')
