@@ -33,6 +33,6 @@ You can connect with me via [Email](mailto:ibnmudi@gmail.com), on [LinkedIn](htt
 
 ## 📊 GitHub Stats
 
-[![AbdulForTech's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdulForTech&show_icons=true&theme=dark)](https://github.com/AbdulForTech)
+[![AbdulForTech's GitHub stats](https://github-readme-stats.vercel.app/api?username=Abdulfortech&show_icons=true&theme=dark)](https://github.com/Abdulfortech)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdulForTech&layout=compact&theme=dark)](https://github.com/AbdulForTech)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Abdulfortech&layout=compact&theme=dark)](https://github.com/Abdulfortech)
