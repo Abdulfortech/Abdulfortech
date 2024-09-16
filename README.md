@@ -13,11 +13,11 @@ In my backend development career, I'm focused on building robust and modern APIs
 - **Languages:** HTML, CSS, PHP, JavaScript, TypeScript
 - **Frontend Frameworks:** Bootstrap
 - **Backend Frameworks:** Laravel, Express.js, Redwood.js, CodeIgniter
-- **Databases:** MySQL, PostgreSQL
+- **Databases:** MySQL, PostgreSQL, MangoDB
 
 ## 🌱 Learning
 
-I'm currently on a journey to become a mobile developer using Flutter and Dart. My focus is on developing beginner-friendly apps that provide value to users while mastering the intricacies of mobile development.
+I'm currently learning mobile development using Flutter and Dart. My focus is on developing beginner-friendly apps that provide value to users while mastering the intricacies of mobile development.
 
 ## 👯 Collaboration
 
